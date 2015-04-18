@@ -1,0 +1,17 @@
+String googleResponse = HttpUtil.URLtoString("http://finance.google.com/finance/info?client=ig&q=NASDAQ:GOOG");
+String token[] = StringUtil.split(googleResponse, "//");
+ 
+JSONArray jsonArray = JSONFactoryUtil.createJSONArray(token[1]);
+JSONObject jsonObject = jsonArray.getJSONObject(0);
+ 
+String id = jsonObject.getString("id");
+String t = jsonObject.getString("t");
+String e = jsonObject.getString("e");
+String l = jsonObject.getString("l");
+String l_cur = jsonObject.getString("l_cur");
+String s = jsonObject.getString("s");
+String ltt = jsonObject.getString("ltt");
+String lt = jsonObject.getString("lt");
+String c = jsonObject.getString("c");
+String cp = jsonObject.getString("cp");
+String ccol = jsonObject.getString("ccol"); 
